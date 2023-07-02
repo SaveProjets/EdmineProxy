@@ -39,9 +39,11 @@ public class FriendInfo
     public void addRequest() { friendData.addRequest(); }
     public void setStatusDemand(int status) { friendData.setStatusDemand(status); }
     public void removeRequest() { friendData.removeRequest(); }
+    public void setFriendFavoris(int isFavoris) { friendData.setFavoris(isFavoris);}
     public List<String> getFriendList() { return friendData.getFriendList(); }
     public List<String> getFriendRequest() { return friendData.getFriendRequest(); }
     public List<String> getFriendRequestSend() { return friendData.getFriendRequestSend(); }
+    public List<String>getFavList(){ return friendData.getFavList(); }
     public int getFriendDemand() { return friendData.getFriendDemand(); }
     public int getStatusDemand() { return friendData.getStatusDemand(); }
     public Integer getFriendCount() { return friendData.getFriendCount(); }

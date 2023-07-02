@@ -270,6 +270,34 @@ public class FriendCommand extends Command
                 }
             }
         }
+        if (args.length == 3){
+            if(args[0].equalsIgnoreCase("favoris")){
+                if(args[1].equalsIgnoreCase("add")){
+                    String target = args[2];
+                    FriendInfo friendInfo = new FriendInfo(p.getName());
+                    if (ProxyServer.getInstance().getPlayer(target) == p)
+                    {
+                        FriendMessages.error(p, "addyourself");
+                        return;
+                    }
+                    if(!friendInfo.getFriendList().contains(target)){
+                        FriendMessages.error(p,"notfriendwith");
+                        return;
+                    }
+                    if(friendInfo.getFavList().contains(target)){
+                        FriendMessages.error(p, "alreadyfavoris");
+                        return;
+                    }
+
+
+                    FriendInfo finalFriendInfo = new FriendInfo(p.getName(), target);
+
+                    finalFriendInfo.setFriendFavoris(1);
+                    FriendMessages.AjoutFav(p, target);
+                    return;
+                }
+            }
+        }
     }
 
 }

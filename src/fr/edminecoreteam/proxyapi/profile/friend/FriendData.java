@@ -133,6 +133,37 @@ public class FriendData
         }
     }
 
+    public void setFavoris(int isFavoris){
+        try {
+            PreparedStatement ps = MySQL.getConnection().prepareStatement("UPDATE " + table + " SET isFavoris = ? WHERE player_name = ? AND friend_name = ?");
+            ps.setInt(1, isFavoris);
+            ps.setString(2, p);
+            ps.setString(3, t);
+            ps.execute();
+            ps.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List<String> getFavList(){
+        List<String> favList = new ArrayList<String>();
+        try {
+            PreparedStatement ps = MySQL.getConnection().prepareStatement("SELECT friend_name FROM " + table + " WHERE player_name = ? AND isFavoris = 1");
+            ps.setString(1, p);
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()){
+                favList.add(rs.getString("friend_name"));
+            }
+            ps.close();
+        }
+        catch (SQLException e){
+            e.printStackTrace();
+            return favList;
+        }
+        return favList;
+    }
+
     public List<String> getFriendList()
     {
         List<String> friendList = new ArrayList<String>();
