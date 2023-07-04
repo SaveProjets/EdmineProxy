@@ -296,6 +296,28 @@ public class FriendCommand extends Command
                     FriendMessages.AjoutFav(p, target);
                     return;
                 }
+                if (args[1].equalsIgnoreCase("remove")){
+                    String target = args[2];
+                    FriendInfo friendInfo = new FriendInfo(p.getName());
+                    if (ProxyServer.getInstance().getPlayer(target) == p)
+                    {
+                        FriendMessages.error(p, "removeyourself");
+                        return;
+                    }
+                    if(!friendInfo.getFriendList().contains(target)){
+                        FriendMessages.error(p,"notfriendwith");
+                        return;
+                    }
+                    if(!friendInfo.getFavList().contains(target)){
+                        FriendMessages.error(p, "notfavoris");
+                        return;
+                    }
+
+                    FriendInfo finalFriendInfo = new FriendInfo(p.getName(), target);
+
+                    finalFriendInfo.setFriendFavoris(0);
+                    FriendMessages.SuppFav(p, target);
+                }
             }
         }
     }

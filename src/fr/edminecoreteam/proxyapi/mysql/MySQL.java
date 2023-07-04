@@ -74,7 +74,7 @@ public class MySQL
 
     public void creatingTableFriends() {
         try {
-            PreparedStatement stm = MySQL.connection.prepareStatement("CREATE TABLE IF NOT EXISTS ed_friends (player_name varchar(255), uuid_player varchar(255), friend_name varchar(255), uuid_friend varchar(255), request_name varchar(255), request_uuid varchar(255), request_friend varchar(255), request_frienduuid varchar(255), status_demand int(11)) CHARACTER SET utf8");
+            PreparedStatement stm = MySQL.connection.prepareStatement("CREATE TABLE IF NOT EXISTS ed_friends (player_name varchar(255), uuid_player varchar(255), friend_name varchar(255), uuid_friend varchar(255), isFriend int(11), request_name varchar(255), request_uuid varchar(255), request_friend varchar(255), request_frienduuid varchar(255), status_demand int(11)) CHARACTER SET utf8");
             stm.execute();
             stm.close();
         }

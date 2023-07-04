@@ -50,6 +50,9 @@ public class FriendMessages
         if (error == "alreadyfavoris"){
             p.sendMessage((BaseComponent)new TextComponent("§cErreur, ce joueur fait déjà partis de vos favoris..."));
         }
+        if(error == "notfavoris"){
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, ce joueur ne fait pas partis de vos favoris..."));
+        }
     }
 
     @SuppressWarnings("deprecation")
@@ -124,7 +127,7 @@ public class FriendMessages
             p.sendMessage((BaseComponent)new TextComponent(" §7• §d/§ff accept§8/§fdeny §a[joueur] §8§l» §7Gestion de demande d'ami."));
             p.sendMessage((BaseComponent)new TextComponent(" §7• §d/§ff list §8§l» §7Liste d'amis."));
             p.sendMessage((BaseComponent)new TextComponent(" §7• §d/§ff request §8§l» §7Liste de vos demandes d'amis."));
-            p.sendMessage((BaseComponent)new TextComponent(" §7• §d/§ff favoris add§8/§fremove §a[joueur] §8§l» §7Ajouter/supprimer §fun ami à vos §ffavoris."));
+            p.sendMessage((BaseComponent)new TextComponent(" §7• §d/§ff favoris add§8/§fremove §a[joueur] §8§l» §7Ajouter/supprimer §7un §7ami §7à §7vos §7favoris."));
             p.sendMessage((BaseComponent)new TextComponent(""));
         }
         if (msg == "listnothing")
@@ -404,7 +407,7 @@ public class FriendMessages
         p.sendMessage((BaseComponent)new TextComponent(""));
     }
 
-    public static void SuppFav(ProxiedPlayer p, ProxiedPlayer t){
+    public static void SuppFav(ProxiedPlayer p, String t){
         p.sendMessage((BaseComponent) new TextComponent(""));
         p.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
         p.sendMessage((BaseComponent)new TextComponent(" §7• §fVous avez supprimé §c§l" + t + " §fde vos favoris."));
