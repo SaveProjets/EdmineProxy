@@ -34,7 +34,7 @@ public class FriendData
     {
         try
         {
-            PreparedStatement ps = MySQL.getConnection().prepareStatement("INSERT INTO " + table + " (player_name, uuid_player, friend_name, uuid_friend) VALUES (?, ?, ?, ?)");
+            PreparedStatement ps = MySQL.getConnection().prepareStatement("INSERT INTO " + table + " (player_name, uuid_player, friend_name, uuid_friend, isFavoris) VALUES (?, ?, ?, ?, 0)");
             ps.setString(1, p);
             ps.setString(2, ProxyServer.getInstance().getPlayer(p).getUniqueId().toString());
             ps.setString(3, t);
@@ -52,7 +52,7 @@ public class FriendData
     {
         try
         {
-            PreparedStatement ps = MySQL.getConnection().prepareStatement("INSERT INTO " + table + " (player_name, uuid_player, friend_name, uuid_friend) VALUES (?, ?, ?, ?)");
+            PreparedStatement ps = MySQL.getConnection().prepareStatement("INSERT INTO " + table + " (player_name, uuid_player, friend_name, uuid_friend, isFavoris) VALUES (?, ?, ?, ?, 0)");
             ps.setString(1, p);
             ps.setString(2, UUIDFetcher.getUUID(p).toString());
             ps.setString(3, t);
