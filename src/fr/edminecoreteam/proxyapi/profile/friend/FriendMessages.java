@@ -21,37 +21,37 @@ public class FriendMessages
         }
         if (error == "addyourself")
         {
-            p.sendMessage((BaseComponent)new TextComponent("§cErreur, vous ne pouvez pas vous ajouter vous même..."));
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, vous ne pouvez pas vous ajouter vous-même..."));
         }
         if (error == "removeyourself")
         {
-            p.sendMessage((BaseComponent)new TextComponent("§cErreur, vous ne pouvez pas vous supprimer vous même..."));
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, vous ne pouvez pas vous supprimer vous-même..."));
         }
         if (error == "requestby")
         {
-            p.sendMessage((BaseComponent)new TextComponent("§cErreur, vous avez déjà envoyé une requête a ce joueur..."));
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, vous avez déjà envoyé une requête à ce joueur..."));
         }
         if (error == "friendwith")
         {
-            p.sendMessage((BaseComponent)new TextComponent("§cErreur, il semble que vous êtes déjà amis..."));
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, il semble que vous êtes déjà ami..."));
         }
         if (error == "notfriendwith")
         {
-            p.sendMessage((BaseComponent)new TextComponent("§cErreur, il semble que vous n'êtes pas amis..."));
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, il semble que vous n'êtes pas ami..."));
         }
         if (error == "notrequestwith")
         {
-            p.sendMessage((BaseComponent)new TextComponent("§cErreur, vous n'avez aucune demande d'amis de ce joueur..."));
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, vous n'avez aucune demande d'ami de ce joueur..."));
         }
         if (error == "offlinetarget")
         {
             p.sendMessage((BaseComponent)new TextComponent("§cErreur, ce joueur est hors-ligne..."));
         }
         if (error == "alreadyfavoris"){
-            p.sendMessage((BaseComponent)new TextComponent("§cErreur, ce joueur fait déjà partis de vos favoris..."));
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, ce joueur fait déjà parti de vos favoris..."));
         }
         if(error == "notfavoris"){
-            p.sendMessage((BaseComponent)new TextComponent("§cErreur, ce joueur ne fait pas partis de vos favoris..."));
+            p.sendMessage((BaseComponent)new TextComponent("§cErreur, ce joueur ne fait pas parti de vos favoris..."));
         }
     }
 
@@ -59,19 +59,19 @@ public class FriendMessages
     public static void continuee(ProxiedPlayer b, ProxiedPlayer p, Integer i) {
         b.sendMessage((BaseComponent)new TextComponent(""));
         b.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
-        b.sendMessage((BaseComponent)new TextComponent(" §7• §fRequête d'ami reçu de §b§l" + p.getName() + "§f."));
+        b.sendMessage((BaseComponent)new TextComponent(" §7• §fRequête d'ami reçue de §b§l" + p.getName() + "§f."));
         TextComponent acceptDemandList = new TextComponent(" §f➡ ");
 
         TextComponent tokenComponent1 = new TextComponent("§a[Accepter]");
         tokenComponent1.setBold(true);
         tokenComponent1.setUnderlined(true);
-        tokenComponent1.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez ici pour accepter.")));
+        tokenComponent1.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez-ici pour accepter.")));
         tokenComponent1.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/f accept " + p.getName()));
 
         TextComponent tokenComponent2 = new TextComponent("§c[Refuser]");
         tokenComponent2.setBold(true);
         tokenComponent2.setUnderlined(true);
-        tokenComponent2.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez ici pour refuser.")));
+        tokenComponent2.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez-ici pour refuser.")));
         tokenComponent2.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/f deny " + p.getName()));
 
         acceptDemandList.addExtra(tokenComponent1);
@@ -82,7 +82,7 @@ public class FriendMessages
 
         p.sendMessage((BaseComponent)new TextComponent(""));
         p.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
-        p.sendMessage((BaseComponent)new TextComponent(" §7• §fRequête d'ami envoyé à §b§l" + b.getName() + "§f."));
+        p.sendMessage((BaseComponent)new TextComponent(" §7• §fRequête d'ami envoyée à §b§l" + b.getName() + "§f."));
         p.sendMessage((BaseComponent)new TextComponent(""));
     }
 
@@ -90,20 +90,20 @@ public class FriendMessages
     public static void continueee(ProxiedPlayer b, String p) {
         b.sendMessage((BaseComponent)new TextComponent(""));
         b.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
-        b.sendMessage((BaseComponent)new TextComponent(" §7• §fVoulez vous accepter ou refuser §b" + p + "§f?"));
+        b.sendMessage((BaseComponent)new TextComponent(" §7• §fVoulez-vous accepter ou refuser §b" + p + "§f?"));
 
         TextComponent acceptDemandList = new TextComponent(" §f➡ ");
 
         TextComponent tokenComponent1 = new TextComponent("§a[Accepter]");
         tokenComponent1.setBold(true);
         tokenComponent1.setUnderlined(true);
-        tokenComponent1.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez ici pour accepter.")));
+        tokenComponent1.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez-ici pour accepter.")));
         tokenComponent1.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/f accept " + p));
 
         TextComponent tokenComponent2 = new TextComponent("§c[Refuser]");
         tokenComponent2.setBold(true);
         tokenComponent2.setUnderlined(true);
-        tokenComponent2.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez ici pour refuser.")));
+        tokenComponent2.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez-ici pour refuser.")));
         tokenComponent2.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/f deny " + p));
 
         acceptDemandList.addExtra(tokenComponent1);
@@ -174,7 +174,7 @@ public class FriendMessages
                     TextComponent tokenComponent = new TextComponent("§a" + amis);
                     tokenComponent.setBold(true);
                     tokenComponent.setUnderlined(true);
-                    tokenComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez ici pour voir son profil.")));
+                    tokenComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez-ici pour voir son profil.")));
                     tokenComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/profil " + amis));
 
                     friendList.addExtra(tokenComponent);
@@ -218,7 +218,7 @@ public class FriendMessages
                     TextComponent tokenComponent = new TextComponent("§8" + amis);
                     tokenComponent.setBold(true);
                     tokenComponent.setUnderlined(true);
-                    tokenComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez ici pour voir son profil.")));
+                    tokenComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez-ici pour voir son profil.")));
                     tokenComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/profil " + amis));
 
                     friendOfflineList.addExtra(tokenComponent);
@@ -261,11 +261,11 @@ public class FriendMessages
             if (!friendDemand.isEmpty())
             {
                 p.sendMessage((BaseComponent)new TextComponent(""));
-                p.sendMessage((BaseComponent)new TextComponent(" §7» §d§lDemandes d'ami(s):"));
+                p.sendMessage((BaseComponent)new TextComponent(" §7» §d§lDemandes d'amis:"));
                 p.sendMessage((BaseComponent)new TextComponent(""));
-                p.sendMessage((BaseComponent)new TextComponent(" §7• §fNombre de demande(s): §e" + friendInfo.getRequestCount()));
+                p.sendMessage((BaseComponent)new TextComponent(" §7• §fNombre de demandes: §e" + friendInfo.getRequestCount()));
                 p.sendMessage((BaseComponent)new TextComponent(""));
-                TextComponent friendDemandList = new TextComponent(" §7➡ §fReçu(s): ");
+                TextComponent friendDemandList = new TextComponent(" §7➡ §fReçue(s): ");
                 int counterDemandFriend = 0;
                 int finalCountDemandFriend = friendDemand.size();
                 for (String amis : friendDemand)
@@ -273,7 +273,7 @@ public class FriendMessages
                     TextComponent tokenComponent = new TextComponent("§a" + amis);
                     tokenComponent.setBold(true);
                     tokenComponent.setUnderlined(true);
-                    tokenComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez ici pour accepter ou refuser.")));
+                    tokenComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez-ici pour accepter ou refuser.")));
                     tokenComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/f acceptwithrunaction " + amis));
 
                     friendDemandList.addExtra(tokenComponent);
@@ -294,13 +294,13 @@ public class FriendMessages
                 p.sendMessage((BaseComponent)new TextComponent(""));
                 p.sendMessage((BaseComponent)new TextComponent(" §7» §d§lDemandes d'amis:"));
                 p.sendMessage((BaseComponent)new TextComponent(""));
-                p.sendMessage((BaseComponent)new TextComponent(" §7• §fNombre de demandes: §c0"));
+                p.sendMessage((BaseComponent)new TextComponent(" §7• §fNombre de demande: §c0"));
                 p.sendMessage((BaseComponent)new TextComponent(""));
-                p.sendMessage((BaseComponent)new TextComponent(" §7➡ §fReçu(s): §caucune"));
+                p.sendMessage((BaseComponent)new TextComponent(" §7➡ §fReçue: §caucune"));
             }
             if (!friendDemandSend.isEmpty())
             {
-                TextComponent friendDemandSendList = new TextComponent(" §7➡ §fEn-attente(s): ");
+                TextComponent friendDemandSendList = new TextComponent(" §7➡ §fEn attente: ");
                 int counterDemandSendFriend = 0;
                 int finalCountDemandSendFriend = friendDemandSend.size();
                 for (String amis : friendDemandSend)
@@ -308,7 +308,7 @@ public class FriendMessages
                     TextComponent tokenComponent = new TextComponent("§7" + amis);
                     tokenComponent.setBold(true);
                     tokenComponent.setUnderlined(true);
-                    tokenComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez ici pour voir son profil.")));
+                    tokenComponent.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, TextComponent.fromLegacyText("§7Cliquez-ici pour voir son profil.")));
                     tokenComponent.setClickEvent(new ClickEvent(ClickEvent.Action.RUN_COMMAND, "/profil " + amis));
 
                     friendDemandSendList.addExtra(tokenComponent);
@@ -329,7 +329,7 @@ public class FriendMessages
             }
             else
             {
-                p.sendMessage((BaseComponent)new TextComponent(" §7➡ §fEn-attente(s): §caucune"));
+                p.sendMessage((BaseComponent)new TextComponent(" §7➡ §fEn attente: §caucune"));
                 p.sendMessage((BaseComponent)new TextComponent(""));
                 p.sendMessage((BaseComponent)new TextComponent(" §8• §7Visionnez vos demandes d'amis sur votre profil."));
                 p.sendMessage((BaseComponent)new TextComponent(""));
@@ -349,7 +349,7 @@ public class FriendMessages
     public static void removeFriend(ProxiedPlayer p, ProxiedPlayer t) {
         p.sendMessage((BaseComponent)new TextComponent(""));
         p.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
-        p.sendMessage((BaseComponent)new TextComponent(" §7• §fVous n'êtes plus amis avec §c§l" + t.getName() + "§f."));
+        p.sendMessage((BaseComponent)new TextComponent(" §7• §fVous n'êtes plus ami avec §c§l" + t.getName() + "§f."));
         p.sendMessage((BaseComponent)new TextComponent(""));
         t.sendMessage((BaseComponent)new TextComponent(""));
         t.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
@@ -360,7 +360,7 @@ public class FriendMessages
     public static void removeFriend(ProxiedPlayer p, String t) {
         p.sendMessage((BaseComponent)new TextComponent(""));
         p.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
-        p.sendMessage((BaseComponent)new TextComponent(" §7• §fVous n'êtes plus amis avec §c§l" + t + "§f."));
+        p.sendMessage((BaseComponent)new TextComponent(" §7• §fVous n'êtes plus ami avec §c§l" + t + "§f."));
         p.sendMessage((BaseComponent)new TextComponent(""));
     }
 
@@ -378,7 +378,7 @@ public class FriendMessages
         p.sendMessage((BaseComponent)new TextComponent(""));
         t.sendMessage((BaseComponent)new TextComponent(""));
         t.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
-        t.sendMessage((BaseComponent)new TextComponent(" §7• §a§l" + p.getName() + "§f a accepté votre demande d'amis."));
+        t.sendMessage((BaseComponent)new TextComponent(" §7• §a§l" + p.getName() + "§f a accepté votre demande d'ami."));
         t.sendMessage((BaseComponent)new TextComponent(""));
     }
 
@@ -396,7 +396,7 @@ public class FriendMessages
         p.sendMessage((BaseComponent)new TextComponent(""));
         t.sendMessage((BaseComponent)new TextComponent(""));
         t.sendMessage((BaseComponent)new TextComponent(" §7» §d§lInformations §d(Amis):"));
-        t.sendMessage((BaseComponent)new TextComponent(" §7• §c§l" + p.getName() + "§f a refusé votre demande d'amis..."));
+        t.sendMessage((BaseComponent)new TextComponent(" §7• §c§l" + p.getName() + "§f a refusé votre demande d'ami..."));
         t.sendMessage((BaseComponent)new TextComponent(""));
     }
 
