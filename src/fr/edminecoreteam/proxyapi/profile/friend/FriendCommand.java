@@ -3,6 +3,7 @@ package fr.edminecoreteam.proxyapi.profile.friend;
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
+import net.md_5.bungee.api.chat.TextComponent;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 
@@ -57,7 +58,7 @@ public class FriendCommand extends Command
                     FriendMessages.error(p, "addyourself");
                     return;
                 }
-                if (friendInfo.getFriendRequest().contains(target))
+                if (friendInfo.getFriendRequestSend().contains(target))
                 {
                     FriendMessages.error(p, "requestby");
                     return;
@@ -67,6 +68,9 @@ public class FriendCommand extends Command
                     FriendMessages.error(p, "friendwith");
                     return;
                 }
+                if(friendInfo.getFriendRequest().contains(target)){
+
+                }
 
                 FriendInfo finalFriendInfo = new FriendInfo(p.getName(), t.getName());
                 FriendInfo finalTargetInfo = new FriendInfo(t.getName(), p.getName());
@@ -75,6 +79,9 @@ public class FriendCommand extends Command
                 finalTargetInfo.addRequest();
                 finalFriendInfo.setStatusDemand(1);
                 finalTargetInfo.setStatusDemand(2);
+                for(String test : friendInfo.getFriendRequest()){
+                    ProxyServer.getInstance().getPlayer("Ygroxie").sendMessage(TextComponent.fromLegacyText(test));
+                }
                 FriendMessages.continuee(t, p, 2);
                 return;
             }
