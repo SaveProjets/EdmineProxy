@@ -24,7 +24,7 @@ public class MaintenanceInfo
     public int getModuleRank() { return maintenanceData.getModuleRank(); }
     public String getRankType() { return maintenanceData.getRankType(); }
 
-    public void addInMaintenanceWhitelist() { maintenanceData.addInMaintenanceWhitelist(); }
+    public void addInMaintenanceWhitelist(String modName) { maintenanceData.addInMaintenanceWhitelist(modName); }
     public void removeFromMaintenanceWhitelist() { maintenanceData.removeFromMaintenanceWhitelist(); }
     public boolean isInMaintenanceWhitelist() { return maintenanceData.isInMaintenanceWhitelist(); }
 

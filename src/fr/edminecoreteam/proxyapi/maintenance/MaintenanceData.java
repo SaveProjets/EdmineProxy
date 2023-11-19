@@ -15,14 +15,15 @@ public class MaintenanceData
         this.p = p;
     }
 
-    public void addInMaintenanceWhitelist()
+    public void addInMaintenanceWhitelist(String modName)
     {
         if (!isInMaintenanceWhitelist())
         {
             try
             {
-                PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("INSERT INTO ed_maintenance (player_name) VALUES (?)");
+                PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("INSERT INTO ed_maintenance (player_name, add_by_name) VALUES (?, ?)");
                 preparedStatement.setString(1, p); /*player_name*/
+                preparedStatement.setString(2, modName);
                 preparedStatement.execute();
                 preparedStatement.close();
             }

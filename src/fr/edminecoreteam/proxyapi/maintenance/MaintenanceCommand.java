@@ -116,7 +116,7 @@ public class MaintenanceCommand extends Command
                 }
                 else
                 {
-                    maintenanceInfo.addInMaintenanceWhitelist();
+                    maintenanceInfo.addInMaintenanceWhitelist(sender.getName());
                     addInWhitelist(sender, target);
                 }
             }
@@ -198,10 +198,14 @@ public class MaintenanceCommand extends Command
 
     private void addInWhitelist(CommandSender sender, String target) {
         sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez ajouter §e" + target + "§f dans la whitelist."));
+        ProxyServer.getInstance().getConsole().sendMessage(TextComponent.fromLegacyText("[MAINTENANCE] " + sender.getName() + " a ajouté " + target + " à la whitelist !"));
+
     }
 
     private void removeFromWhitelist(CommandSender sender, String target) {
         sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez suprimer §c" + target + "§f de la whitelist."));
+        ProxyServer.getInstance().getConsole().sendMessage(TextComponent.fromLegacyText("[MAINTENANCE] " + sender.getName() + " a supprimé " + target + " de la whitelist !"));
+
     }
 
     private void reloadData(CommandSender sender) {
