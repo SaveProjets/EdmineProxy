@@ -79,9 +79,9 @@ public class FriendCommand extends Command
                 finalTargetInfo.addRequest();
                 finalFriendInfo.setStatusDemand(1);
                 finalTargetInfo.setStatusDemand(2);
-                for(String test : friendInfo.getFriendRequest()){
+               /* for(String test : friendInfo.getFriendRequest()){
                     ProxyServer.getInstance().getPlayer("Ygroxie").sendMessage(TextComponent.fromLegacyText(test));
-                }
+                }*/
                 FriendMessages.continuee(t, p, 2);
                 return;
             }
