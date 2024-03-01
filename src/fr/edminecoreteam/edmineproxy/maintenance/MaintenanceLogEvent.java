@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.maintenance;
+package fr.edminecoreteam.edmineproxy.maintenance;
 
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.chat.TextComponent;

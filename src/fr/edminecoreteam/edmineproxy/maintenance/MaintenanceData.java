@@ -1,10 +1,10 @@
-package fr.edminecoreteam.proxyapi.maintenance;
+package fr.edminecoreteam.edmineproxy.maintenance;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import fr.edminecoreteam.proxyapi.mysql.MySQL;
+import fr.edminecoreteam.edmineproxy.mysql.MySQL;
 
 public class MaintenanceData
 {

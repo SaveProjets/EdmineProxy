@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.profile.friend;
+package fr.edminecoreteam.edmineproxy.profile.friend;
 
 import net.md_5.bungee.BungeeCord;
 import net.md_5.bungee.api.CommandSender;

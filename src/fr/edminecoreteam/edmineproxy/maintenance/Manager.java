@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.maintenance;
+package fr.edminecoreteam.edmineproxy.maintenance;
 
 import net.md_5.bungee.config.ConfigurationProvider;
 import net.md_5.bungee.config.YamlConfiguration;

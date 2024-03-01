@@ -1,12 +1,12 @@
-package fr.edminecoreteam.proxyapi.party;
+package fr.edminecoreteam.edmineproxy.party;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.TimeUnit;
 
-import fr.edminecoreteam.proxyapi.ProxyAPI;
-import fr.edminecoreteam.proxyapi.profile.AccountData;
-import fr.edminecoreteam.proxyapi.profile.SettingData;
+import fr.edminecoreteam.edmineproxy.EdmineProxy;
+import fr.edminecoreteam.edmineproxy.profile.AccountData;
+import fr.edminecoreteam.edmineproxy.profile.SettingData;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.event.PlayerDisconnectEvent;
@@ -17,7 +17,7 @@ import net.md_5.bungee.event.EventHandler;
 
 public class PartyListener implements Listener
 {
-    private static ProxyAPI api = ProxyAPI.getInstance();
+    private static EdmineProxy api = EdmineProxy.getInstance();
 
     @EventHandler
     public void onLeave(PlayerDisconnectEvent e) {

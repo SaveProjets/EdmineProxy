@@ -1,37 +1,45 @@
-package fr.edminecoreteam.proxyapi;
+package fr.edminecoreteam.edmineproxy;
 
+import java.io.File;
+import java.io.IOException;
 import java.sql.Connection;
 import java.util.concurrent.TimeUnit;
 
-import fr.edminecoreteam.proxyapi.maintenance.MaintenanceCommand;
-import fr.edminecoreteam.proxyapi.maintenance.MaintenanceLogEvent;
-import fr.edminecoreteam.proxyapi.maintenance.MaintenancePingListener;
-import fr.edminecoreteam.proxyapi.maintenance.Manager;
-import fr.edminecoreteam.proxyapi.mysql.MySQL;
-import fr.edminecoreteam.proxyapi.party.InvitationsManager;
-import fr.edminecoreteam.proxyapi.party.PartyCommand;
-import fr.edminecoreteam.proxyapi.party.PartyListener;
-import fr.edminecoreteam.proxyapi.party.PartyMessage;
-import fr.edminecoreteam.proxyapi.profile.friend.FriendCommand;
+import fr.edminecoreteam.edmineproxy.maintenance.MaintenanceCommand;
+import fr.edminecoreteam.edmineproxy.maintenance.MaintenanceLogEvent;
+import fr.edminecoreteam.edmineproxy.maintenance.MaintenancePingListener;
+import fr.edminecoreteam.edmineproxy.maintenance.Manager;
+import fr.edminecoreteam.edmineproxy.mysql.MySQL;
+import fr.edminecoreteam.edmineproxy.party.InvitationsManager;
+import fr.edminecoreteam.edmineproxy.party.PartyCommand;
+import fr.edminecoreteam.edmineproxy.party.PartyListener;
+import fr.edminecoreteam.edmineproxy.party.PartyMessage;
+import fr.edminecoreteam.edmineproxy.profile.friend.FriendCommand;
 import net.md_5.bungee.api.ProxyServer;
 import net.md_5.bungee.api.connection.ProxiedPlayer;
 import net.md_5.bungee.api.plugin.Command;
 import net.md_5.bungee.api.plugin.Plugin;
+import net.md_5.bungee.config.Configuration;
+import net.md_5.bungee.config.ConfigurationProvider;
+import net.md_5.bungee.config.YamlConfiguration;
 
-public class ProxyAPI extends Plugin
+public class EdmineProxy extends Plugin
 {
-    private static ProxyAPI instance;
+    private static EdmineProxy instance;
     private static Plugin plugin;
     public static MySQL database;
     public InvitationsManager invitationManager;
+    private Configuration config;
 
-    public ProxyAPI() {
+
+    public EdmineProxy() {
         invitationManager = new InvitationsManager();
     }
 
     @Override
     public void onEnable()
     {
+        loadConfig();
         Manager.init();
         databaseConnect();
 
@@ -42,23 +50,25 @@ public class ProxyAPI extends Plugin
     @Override
     public void onDisable()
     {
-        ProxyAPI.database.deconnexion();
+        EdmineProxy.database.deconnexion();
     }
 
     private void databaseConnect()
     {
-        (ProxyAPI.database = new MySQL("jdbc:mysql://", "45.140.165.235", "22728-database", "22728-database", "S5bV5su4p9")).connexion();
+
+
+        (EdmineProxy.database = new MySQL("jdbc:mysql://", config.getString("mysql.host"), config.getString("mysql.database"), config.getString("mysql.user"), config.getString("mysql.password"))).connexion();
         if (!database.isOnline()) { return; }
         refreshConnexion();
-        ProxyAPI.database.creatingTableMaintenance();
-        ProxyAPI.database.creatingTableFriends();
-        ProxyAPI.database.creatingTablePartyList();
-        ProxyAPI.database.creatingTablePartyBan();
+        EdmineProxy.database.creatingTableMaintenance();
+        EdmineProxy.database.creatingTableFriends();
+        EdmineProxy.database.creatingTablePartyList();
+        EdmineProxy.database.creatingTablePartyBan();
     }
 
     private void registerListeners()
     {
-        ProxyAPI.instance = this;
+        EdmineProxy.instance = this;
         getProxy().getPluginManager().registerListener(this, new MaintenanceLogEvent());
         getProxy().getPluginManager().registerListener(this, new MaintenancePingListener());
         getProxy().getPluginManager().registerListener(this, new PartyListener());
@@ -81,18 +91,41 @@ public class ProxyAPI extends Plugin
             @Override
             public void run()
             {
-                if (!ProxyAPI.database.isOnline())
+                if (!EdmineProxy.database.isOnline())
                 {
-                    ProxyAPI.database.connexion();
+                    EdmineProxy.database.connexion();
                     run();
                 }
                 else
                 {
-                    ProxyAPI.database.deconnexion();
-                    ProxyAPI.database.connexion();
+                    EdmineProxy.database.deconnexion();
+                    EdmineProxy.database.connexion();
                 }
             }
         }, 0L, 120L, TimeUnit.SECONDS);
+    }
+
+    private void loadConfig() {
+        File ord = new File("plugins/API");
+        if (!ord.exists()) {
+            ord.mkdir();
+        }
+        File configFile = new File("plugins/API", "mysql.yml");
+        if (!configFile.exists()) {
+            try {
+                configFile.createNewFile();
+            }
+            catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // Charger la configuration depuis le fichier
+        try {
+            config = ConfigurationProvider.getProvider(YamlConfiguration.class).load(configFile);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public void scheduleDelayedTaskForPlayer(ProxiedPlayer player, String targetName) {
@@ -109,7 +142,7 @@ public class ProxyAPI extends Plugin
         }, 60L, TimeUnit.SECONDS);
     }
 
-    public static ProxyAPI getInstance() { return ProxyAPI.instance; }
-    public static Plugin getPlugin() { return ProxyAPI.plugin; }
+    public static EdmineProxy getInstance() { return EdmineProxy.instance; }
+    public static Plugin getPlugin() { return EdmineProxy.plugin; }
     public static Connection getDatabase() { return MySQL.getConnection(); }
 }

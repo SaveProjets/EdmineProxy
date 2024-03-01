@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.profile.friend;
+package fr.edminecoreteam.edmineproxy.profile.friend;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -6,8 +6,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import fr.edminecoreteam.proxyapi.fetcher.UUIDFetcher;
-import fr.edminecoreteam.proxyapi.mysql.MySQL;
+import fr.edminecoreteam.edmineproxy.fetcher.UUIDFetcher;
+import fr.edminecoreteam.edmineproxy.mysql.MySQL;
 import net.md_5.bungee.api.ProxyServer;
 
 public class FriendData

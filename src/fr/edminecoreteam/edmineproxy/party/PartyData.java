@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.party;
+package fr.edminecoreteam.edmineproxy.party;
 
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -7,7 +7,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
 
-import fr.edminecoreteam.proxyapi.mysql.MySQL;
+import fr.edminecoreteam.edmineproxy.mysql.MySQL;
 
 public class PartyData
 {

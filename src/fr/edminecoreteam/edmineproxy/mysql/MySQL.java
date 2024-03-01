@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.mysql;
+package fr.edminecoreteam.edmineproxy.mysql;
 
 import java.sql.SQLException;
 

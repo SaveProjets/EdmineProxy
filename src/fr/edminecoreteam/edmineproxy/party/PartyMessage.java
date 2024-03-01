@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.party;
+package fr.edminecoreteam.edmineproxy.party;
 
 import java.util.ArrayList;
 import java.util.List;

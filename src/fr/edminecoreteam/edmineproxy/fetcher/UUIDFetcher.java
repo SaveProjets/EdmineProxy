@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.fetcher;
+package fr.edminecoreteam.edmineproxy.fetcher;
 
 import com.google.gson.JsonObject;
 import com.google.gson.JsonElement;

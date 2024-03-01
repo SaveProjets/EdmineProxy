@@ -1,6 +1,6 @@
-package fr.edminecoreteam.proxyapi.maintenance;
+package fr.edminecoreteam.edmineproxy.maintenance;
 
-import fr.edminecoreteam.proxyapi.ProxyAPI;
+import fr.edminecoreteam.edmineproxy.EdmineProxy;
 import net.md_5.bungee.api.ChatColor;
 import net.md_5.bungee.api.CommandSender;
 import net.md_5.bungee.api.ProxyServer;
@@ -13,7 +13,7 @@ public class MaintenanceCommand extends Command
 
     private String staff;
 
-    public MaintenanceCommand(ProxyAPI api) {
+    public MaintenanceCommand(EdmineProxy api) {
         super("maintenance", "edmine.admin");
         this.staff = "staff";
     }

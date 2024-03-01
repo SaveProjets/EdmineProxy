@@ -1,4 +1,4 @@
-package fr.edminecoreteam.proxyapi.maintenance;
+package fr.edminecoreteam.edmineproxy.maintenance;
 
 import java.util.HashMap;
 import java.util.Map;
