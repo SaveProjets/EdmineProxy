@@ -1,2 +1,2 @@
 # ProxyAPI
-Official BungeeCord API of Edmine
+Official BungeeCord Main Plugin of Edmine
