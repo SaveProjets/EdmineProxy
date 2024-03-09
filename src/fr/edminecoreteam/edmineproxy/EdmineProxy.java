@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.sql.Connection;
 import java.util.concurrent.TimeUnit;
 
+import fr.edminecoreteam.edmineproxy.commands.CommandTest;
 import fr.edminecoreteam.edmineproxy.commands.EdmineCommand;
 import fr.edminecoreteam.edmineproxy.maintenance.MaintenanceCommand;
 import fr.edminecoreteam.edmineproxy.maintenance.MaintenanceLogEvent;
@@ -85,6 +86,7 @@ public class EdmineProxy extends Plugin
         getProxy().getPluginManager().registerCommand((Plugin)this, (Command)new PartyCommand("P"));
 
         getProxy().getPluginManager().registerCommand(this, new EdmineCommand(this));
+        getProxy().getPluginManager().registerCommand(this, new CommandTest(this));
     }
 
     public void refreshConnexion()

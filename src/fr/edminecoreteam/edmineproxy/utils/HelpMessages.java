@@ -8,64 +8,58 @@ public class HelpMessages {
     public static void getHelpMessage(CommandSender sender, String arg){
         if(arg == "help"){
             sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine)):"));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine):"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank §8§l» §7Gestion des grades."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine fragments §8§l» §7Gestion des fragments d'âmes."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine eclats §8§l» §7Gestion des eclats divins."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine argent §8§l» §7Gestion de l'argent."));
             sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1))"));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
             //player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
 
-        }
-        if(arg == "fragments"){
+        }else if(arg == "fragments"){
             sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem)):"));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem):"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine fragments §8§l» §7Gestion des fragments d'âmes."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine fragments set §d[joueur] §6[nombre] §8§l» §7Set des fragments."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine fragments add §d[joueur] §6[nombre] §8§l» §7Ajouter des fragments."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine fragments remove §d[joueur] §6[nombre] §8§l» §7Créditer des fragments."));
             sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1))"));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
             //CustomSounds.ecoSound(player));
-        }
-        if(arg == "eclats") {
+        }else if(arg == "eclats") {
             sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem)):"));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem):"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine eclats §8§l» §7Gestion des eclats divins."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine eclats set §d[joueur] §6[nombre] §8§l» §7Set des eclats."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine eclats add §d[joueur] §6[nombre] §8§l» §7Ajouter des eclats."));
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine eclats remove §d[joueur] §6[nombre] §8§l» §7Créditer des eclats."));
             sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1))"));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
             //CustomSounds.ecoSound(player));
-        }
-            if (arg == "argent")
+        } else if (arg == "argent")
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem)):"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem):"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine argent §8§l» §7Gestion de l'argent."));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine argent set §d[joueur] §6[nombre] §8§l» §7Set de l'argent."));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine argent add §d[joueur] §6[nombre] §8§l» §7Ajouter de l'argent."));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine argent remove §d[joueur] §6[nombre] §8§l» §7Créditer de l'argent."));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1))"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 //CustomSounds.ecoSound(player);
-            }
-
-
-            if (arg == "rank")
+            } else if (arg == "rank")
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank)):"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank §8§l» §7Gestion des grades."));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank list §8§l» §7Liste des grades."));
@@ -75,14 +69,13 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank static §d[joueur] §c[rankID] §8§l» §7Gestion des statics."));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank staff §d[joueur] §c[moduleID] §8§l» §7Gestion des staffs."));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1))"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 //player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            }
-            if (arg == "module")
+            } else if (arg == "module")
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank)):"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPour l'utilisation du §dmodulable-rank§f,"));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7  §fun §bmodule §fest un §6sous-grade §fqui s'ajoute au"));
@@ -93,11 +86,10 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank module §d[joueur] §c[moduleID]"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
               //  player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            }
-            if (arg == "static")
+            } else if (arg == "static")
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank)):"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPour l'utilisation du §dstatic-rank§f,"));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7  §fun §bmodule static §fest un §6grade §fqui se"));
@@ -109,11 +101,10 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank static §d[joueur] §c[rankID]"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
               //  player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            }
-            if (arg == "tempo")
+            } else if (arg == "tempo")
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank)):"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPour l'utilisation du §dtempo-rank§f,"));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7  §fun §bmodule temporaire §fest un §6grade §fqui se"));
@@ -125,11 +116,10 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank tempo §d[joueur] §e[mois] §c[rankID]"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                // player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            }
-            if (arg == "staff")
+            } else if (arg == "staff")
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank)):"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPour l'utilisation du §dstaff-rank§f,"));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7  §fun §bmodule staff §fest un §6sous-grade §fqui s'ajoute au"));
@@ -140,29 +130,30 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank staff §d[joueur] §c[moduleID]"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                // player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            }
-            if (arg == "list")
+            } else if (arg == "list")
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank)):"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §e§lStatic"));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7 ➥ §7Joueur §f(0))§8, §5§lSTREAMER §f(6))§8,"));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7   §6§lYOUTUBER §f(7))§8, §6§lFAMOUS §f(8))§8."));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7 ➥ §7Joueur §f(0)§8, §5§lSTREAMER §f(6)§8,"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7   §6§lYOUTUBER §f(7)§8, §6§lFAMOUS §f(8)§8."));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d§lTempo"));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7 ➥ §f§lVIP §f(1))§8, §e§lSUPER-VIP §f(2))§8,"));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7   §a§lSUPREME §f(3))§8, §b§lULTRA §f(4))§8, §3§lELITE §f(5))§8."));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7 ➥ §f§lVIP §f(1)§8, §e§lSUPER-VIP §f(2)§8,"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7   §a§lSUPREME §f(3)§8, §b§lULTRA §f(4)§8, §3§lELITE §f(5)§8."));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §b§lModule"));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7 ➥ §d§lFRIEND §f(9))§8."));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7  §c§l(Staff))"));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7  ➥ §e§lSTAFF §f(10))§8, §a§lBUILDER §f(11))§8, §b§lHELPER §f(12))§8,"));
-                sender.sendMessage(TextComponent.fromLegacyText(" §7    §9§lMOD §f(13))§8, §5§lDEV §f(14))§8, §4§lRESP §f(15))§8, §c§lADMIN §f(16))§8."));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7 ➥ §d§lFRIEND §f(9)§8."));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7  §c§l(Staff)"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7  ➥ §e§lSTAFF §f(10)§8, §a§lBUILDER §f(11)§8, §b§lHELPER §f(12)§8,"));
+                sender.sendMessage(TextComponent.fromLegacyText(" §7    §9§lMOD §f(13)§8, §5§lDEV §f(14)§8, §4§lRESP §f(15)§8, §c§lADMIN §f(16)§8."));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 //player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            }
+            }else{
+            getHelpMessage(sender, "help");
         }
+    }
 
         public static void errorMessage(CommandSender sender, String error)
         {
@@ -200,15 +191,15 @@ public class HelpMessages {
             }
             if (error == "errorsetmodulestaff")
             {
-                sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (10 -> 16))..."));
+                sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (10 -> 16)..."));
             }
             if (error == "errorsetmodulesmodule")
             {
-                sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (9))..."));
+                sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (9)..."));
             }
             if (error == "errorsetmodulestatic")
             {
-                sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (0, 6, 7, 8))..."));
+                sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (0, 6, 7, 8)..."));
             }
             if (error == "fragments")
             {
