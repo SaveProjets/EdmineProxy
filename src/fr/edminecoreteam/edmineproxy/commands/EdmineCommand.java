@@ -32,6 +32,8 @@ public class EdmineCommand extends Command {
             HelpMessages.getHelpMessage(sender, "help");
         }else if (args.length == 1){
             HelpMessages.getHelpMessage(sender, args[0]);
+        }else{
+
         }
     }
 }

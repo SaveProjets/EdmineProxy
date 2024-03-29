@@ -150,7 +150,7 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7    §9§lMOD §f(13)§8, §5§lDEV §f(14)§8, §4§lRESP §f(15)§8, §c§lADMIN §f(16)§8."));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 //player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            }else{
+            }else {
             getHelpMessage(sender, "help");
         }
     }
