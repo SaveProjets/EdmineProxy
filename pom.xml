@@ -6,9 +6,7 @@
 
     <groupId>fr.edminecoreteam</groupId>
     <artifactId>EdmineProxy</artifactId>
-    <version>1.0</version>
-    <packaging>jar</packaging>
-
+    <version>1.0-SNAPSHOT</version>
     <name>EdmineProxy</name>
 
     <properties>
@@ -43,27 +41,39 @@
         </plugins>
         <resources>
             <resource>
-                <directory>src</directory>
+                <directory>src/main/resources</directory>
                 <filtering>true</filtering>
             </resource>
         </resources>
     </build>
 
     <dependencies>
+        <!--Redis - Jedis-->
+        <dependency>
+            <groupId>redis.clients</groupId>
+            <artifactId>jedis</artifactId>
+            <version>3.7.0</version>
+        </dependency>
         <dependency>
             <groupId>net.md-5</groupId>
             <artifactId>bungeecord-api</artifactId>
-            <version>1.20-R0.1-SNAPSHOT</version>
+            <version>1.20-R0.1</version>
             <type>jar</type>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>net.md-5</groupId>
-            <artifactId>bungeecord-api</artifactId>
-            <version>1.20-R0.1-SNAPSHOT</version>
+            <artifactId>bungeecord-proxy</artifactId>
+            <version>1.20-R0.1</version>
             <systemPath>${project.basedir}/lib/BungeeCord.jar</systemPath>
             <type>jar</type>
             <scope>system</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.spigotmc</groupId>
+            <artifactId>spigot-api</artifactId>
+            <version>1.8.8-R0.1-SNAPSHOT</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>fr.edminecoreteam</groupId>

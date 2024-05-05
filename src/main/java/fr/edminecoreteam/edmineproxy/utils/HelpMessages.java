@@ -6,20 +6,8 @@ import net.md_5.bungee.api.chat.TextComponent;
 public class HelpMessages {
 
     public static void getHelpMessage(CommandSender sender, String arg){
-        if(arg == "help"){
-            sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine):"));
-            sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank §8§l» §7Gestion des grades."));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine fragments §8§l» §7Gestion des fragments d'âmes."));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine eclats §8§l» §7Gestion des eclats divins."));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine argent §8§l» §7Gestion de l'argent."));
-            sender.sendMessage(TextComponent.fromLegacyText(""));
-            sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
-            sender.sendMessage(TextComponent.fromLegacyText(""));
-            //player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
 
-        }else if(arg == "fragments"){
+         if(arg.equalsIgnoreCase("fragments")){
             sender.sendMessage(TextComponent.fromLegacyText(""));
             sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem):"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
@@ -31,7 +19,7 @@ public class HelpMessages {
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
             //CustomSounds.ecoSound(player));
-        }else if(arg == "eclats") {
+        }else if(arg.equalsIgnoreCase("eclats")) {
             sender.sendMessage(TextComponent.fromLegacyText(""));
             sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem):"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
@@ -43,7 +31,7 @@ public class HelpMessages {
             sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
             sender.sendMessage(TextComponent.fromLegacyText(""));
             //CustomSounds.ecoSound(player));
-        } else if (arg == "argent")
+        } else if (arg.equalsIgnoreCase("argent"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-EcoSystem):"));
@@ -56,7 +44,7 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 //CustomSounds.ecoSound(player);
-            } else if (arg == "rank")
+            } else if (arg.equalsIgnoreCase("rank"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
@@ -72,7 +60,7 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 //player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            } else if (arg == "module")
+            } else if (arg.equalsIgnoreCase("module"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
@@ -86,7 +74,7 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank module §d[joueur] §c[moduleID]"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
               //  player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            } else if (arg == "static")
+            } else if (arg.equalsIgnoreCase("static"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
@@ -101,7 +89,7 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank static §d[joueur] §c[rankID]"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
               //  player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            } else if (arg == "tempo")
+            } else if (arg.equalsIgnoreCase("tempo"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
@@ -116,7 +104,7 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank tempo §d[joueur] §e[mois] §c[rankID]"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                // player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            } else if (arg == "staff")
+            } else if (arg.equalsIgnoreCase("staff"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
@@ -130,7 +118,7 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank staff §d[joueur] §c[moduleID]"));
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                // player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
-            } else if (arg == "list")
+            } else if (arg.equalsIgnoreCase("list"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine-Rank):"));
@@ -151,127 +139,123 @@ public class HelpMessages {
                 sender.sendMessage(TextComponent.fromLegacyText(""));
                 //player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
             }else{
-            getHelpMessage(sender, "help");
+            sender.sendMessage(TextComponent.fromLegacyText(""));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7» §c§lCentre d'aide §c(Edmine):"));
+            sender.sendMessage(TextComponent.fromLegacyText(""));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine rank §8§l» §7Gestion des grades."));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine fragments §8§l» §7Gestion des fragments d'âmes."));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine eclats §8§l» §7Gestion des eclats divins."));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7• §d/§fedmine argent §8§l» §7Gestion de l'argent."));
+            sender.sendMessage(TextComponent.fromLegacyText(""));
+            sender.sendMessage(TextComponent.fromLegacyText(" §7• §fPage §e(1/1)"));
+            sender.sendMessage(TextComponent.fromLegacyText(""));
+            //player.playSound(player.getLocation()), Sound.LEVEL_UP, 1.0f, 1.0f));
         }
     }
 
-        public static void errorMessage(CommandSender sender, String error)
+        public static void errorMessage(CommandSender sender, String error, String argument0)
         {
-            if (error == "set")
+            if (error.equalsIgnoreCase("set"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine rank set [joueur] [type] [mois] [rankID] [moduleID]."));
-            }
-            if (error == "tempo")
+            }else if (error.equalsIgnoreCase("tempo"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine rank tempo [joueur] [mois] [rankID]."));
-            }
-            if (error == "errortempo")
+            }else if (error.equalsIgnoreCase("errortempo"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur , un compte static comme ytb ou streamer ne peut pas avoir de grade tempo..."));
-            }
-            if (error == "module")
+            }else if (error.equalsIgnoreCase("module"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine rank module [joueur] [moduleID]."));
-            }
-            if (error == "moduledefine")
-            {
-                sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine rank module [joueur] [moduleID]."));
-            }
-            if (error == "static")
+            }else if (error.equalsIgnoreCase("static"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine rank static [joueur] [rankID]."));
-            }
-            if (error == "staff")
+            }else if (error.equalsIgnoreCase("staff"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine rank staff [joueur] [moduleID]."));
-            }
-            if (error == "targetoffline")
+            }else if (error.equalsIgnoreCase("targetoffline"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur, assurez-vous que le joueur ciblé est sur le même serveur que vous..."));
-            }
-            if (error == "errorsetmodulestaff")
+            }else if (error.equalsIgnoreCase("errorsetmodulestaff"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (10 -> 16)..."));
-            }
-            if (error == "errorsetmodulesmodule")
+            }else if (error.equalsIgnoreCase("errorsetmodulesmodule"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (9)..."));
-            }
-            if (error == "errorsetmodulestatic")
+            }else if (error.equalsIgnoreCase("errorsetmodulestatic"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur, veuillez utilisez (0, 6, 7, 8)..."));
-            }
-            if (error == "fragments")
+            }else if (error.equalsIgnoreCase("fragments"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine fragments set/add/remove [joueur] [nombre]."));
-            }
-            if (error == "eclats")
+            }else if (error.equalsIgnoreCase("eclats"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine eclats set/add/remove [joueur] [nombre]."));
-            }
-            if (error == "argent")
+            }else if (error.equalsIgnoreCase("argent"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§cErreur de synthaxe, utilisez /edmine argent set/add/remove [joueur] [nombre]."));
+            }else{
+                getHelpMessage(sender, argument0);
             }
         }
 
-        public static void successMessage(CommandSender sender, String success, String target, int i, Float f)
+        public static void successMessage(CommandSender sender, String success, String target, int i, int f)
         {
-            if (success == "staff")
+            if (success.equalsIgnoreCase("staff"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez défini le Module §bStaff §fde §e" + target + "§f sur §d" + i + "§f."));
             }
-            if (success == "static")
+            if (success.equalsIgnoreCase("static"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez défini le Module §bStatic §fde §e" + target + "§f sur §d" + i + "§f."));
             }
-            if (success == "module")
+            if (success.equalsIgnoreCase("module"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez défini le Module §bModule §fde §e" + target + "§f sur §d" + i + "§f."));
             }
-            if (success == "tempo")
+            if (success.equalsIgnoreCase("tempo"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez défini le Module §bTempo §fde §e" + target + "§f sur §d" + i + "§f."));
             }
-            if (success == "set")
+            if (success.equalsIgnoreCase("set"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez re-défini complètement le type de grade de §e" + target + "§f."));
             }
 
 
-            if (success == "setfragments")
+            if (success.equalsIgnoreCase("setfragments"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez re-défini complètement les fragments de §e" + target + "§f sur §b" + f + "§f."));
             }
-            if (success == "addfragments")
+            if (success.equalsIgnoreCase("addfragments"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez ajouter §b" + f + " §ffragments à §e" + target + "§f."));
             }
-            if (success == "removefragments")
+            if (success.equalsIgnoreCase("removefragments"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez créditer §b" + f + " §ffragments à §e" + target + "§f."));
             }
-            if (success == "seteclats")
+            if (success.equalsIgnoreCase("seteclats"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez re-défini complètement les eclats de §e" + target + "§f sur §b" + f + "§f."));
             }
-            if (success == "addeclats")
+            if (success.equalsIgnoreCase("addeclats"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez ajouter §b" + f + " §feclats à §e" + target + "§f."));
             }
-            if (success == "removeeclats")
+            if (success.equalsIgnoreCase("removeeclats"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez créditer §b" + f + " §feclats à §e" + target + "§f."));
             }
-            if (success == "setargent")
+            if (success.equalsIgnoreCase("setargent"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez re-défini complètement l'argent de §e" + target + "§f sur §b" + f + "§f."));
             }
-            if (success == "addargent")
+            if (success.equalsIgnoreCase("addargent"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez ajouter §b" + f + " §fd'argents à §e" + target + "§f."));
             }
-            if (success == "removeargent")
+            if (success.equalsIgnoreCase("removeargent"))
             {
                 sender.sendMessage(TextComponent.fromLegacyText("§aSuccès ! §fVous avez créditer §b" + f + " §fd'argents à §e" + target + "§f."));
             }
