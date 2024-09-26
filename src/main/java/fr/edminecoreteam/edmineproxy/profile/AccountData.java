@@ -22,14 +22,12 @@ public class AccountData
         {
             try
             {
-                PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("INSERT INTO ed_login (player_name, player_uuid, player_password, lastIP, lastAuth, isPremium, isOnline) VALUES (?, ?, ?, ?, ?, ?, ?)");
+                PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("INSERT INTO ed_login (player_uuid, player_password, lastIP, lastAuth, isOnline) VALUES (?, ?, ?, ?, ?)");
                 preparedStatement.setString(1, player.toString());
                 preparedStatement.setString(2, null);
                 preparedStatement.setString(3, null);
                 preparedStatement.setString(4, null);
                 preparedStatement.setString(5, null);
-                preparedStatement.setString(6, null);
-                preparedStatement.setString(7, null);
                 preparedStatement.execute();
                 preparedStatement.close();
             }
@@ -44,8 +42,8 @@ public class AccountData
     {
         try
         {
-            PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("SELECT lastAuth FROM ed_login WHERE player_name = ?");
-            preparedStatement.setString(1, player.toString());
+            PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("SELECT lastAuth FROM ed_login WHERE player_uuid = ?");
+            preparedStatement.setString(1, player);
             ResultSet rs = preparedStatement.executeQuery();
             return rs.next();
         }
@@ -60,8 +58,8 @@ public class AccountData
     {
         try
         {
-            PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("SELECT player_password FROM ed_login WHERE player_name = ?");
-            preparedStatement.setString(1, player.toString());
+            PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("SELECT player_password FROM ed_login WHERE player_uuid = ?");
+            preparedStatement.setString(1, player);
             ResultSet rs = preparedStatement.executeQuery();
             String result = "";
             while (rs.next()) {
@@ -79,9 +77,9 @@ public class AccountData
 
     public void createPassword(String password) {
         try {
-            final PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("UPDATE ed_login SET player_password = ? WHERE player_name = ?");
+            final PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("UPDATE ed_login SET player_password = ? WHERE player_uuid = ?");
             preparedStatement.setString(1, password);
-            preparedStatement.setString(2, player.toString());
+            preparedStatement.setString(2, player);
             preparedStatement.executeUpdate();
             preparedStatement.close();
         }
@@ -94,8 +92,8 @@ public class AccountData
     {
         try
         {
-            PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("SELECT player_password FROM ed_login WHERE player_name = ?");
-            preparedStatement.setString(1, player.toString());
+            PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("SELECT player_password FROM ed_login WHERE player_uuid = ?");
+            preparedStatement.setString(1, player);
             ResultSet rs = preparedStatement.executeQuery();
             String result = "";
             while (rs.next()) {
@@ -113,9 +111,9 @@ public class AccountData
 
     public void setTypeOfAccount(String accountType) {
         try {
-            final PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("UPDATE ed_login SET isPremium = ? WHERE player_name = ?");
+            final PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("UPDATE ed_login SET isPremium = ? WHERE player_uuid = ?");
             preparedStatement.setString(1, accountType);
-            preparedStatement.setString(2, player.toString());
+            preparedStatement.setString(2, player);
             preparedStatement.executeUpdate();
             preparedStatement.close();
         }
@@ -230,8 +228,8 @@ public class AccountData
     {
         try
         {
-            PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("SELECT isOnline FROM ed_login WHERE player_name = ?");
-            preparedStatement.setString(1, player.toString());
+            PreparedStatement preparedStatement = MySQL.getConnection().prepareStatement("SELECT isOnline FROM ed_login WHERE player_uuid = ?");
+            preparedStatement.setString(1, player);
             ResultSet rs = preparedStatement.executeQuery();
             int result = 0;
             while (rs.next()) {

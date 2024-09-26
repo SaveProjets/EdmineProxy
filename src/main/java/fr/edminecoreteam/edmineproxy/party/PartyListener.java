@@ -79,7 +79,7 @@ public class PartyListener implements Listener
     public void onServerSwitch(ServerConnectEvent e)
     {
         ProxiedPlayer p = e.getPlayer();
-        AccountData aData = new AccountData(p.getName());
+        AccountData aData = new AccountData(p.getUniqueId().toString());
         PartyData pData = new PartyData(p.getName());
 
         if (aData.getStatut() == 1)
